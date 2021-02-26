@@ -30,6 +30,7 @@ export const MoviesList = ({results})=>{
       }
     return(
         <div className='MoviesList'>
+          
             {
                 renderResults()
             }

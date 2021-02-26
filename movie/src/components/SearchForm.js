@@ -19,6 +19,7 @@ export const SearchForm = ({onResults})=>{
             console.log({ Search, totalResults })
             onResults(Search)
         })
+        
     }
 
     return(

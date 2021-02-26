@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
-import { useParmas } from 'react-router-dom'
 import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 const apiKey = 'ee818442'
 
@@ -15,6 +13,8 @@ export const Details = ()=>{
             console.log(movie)
             setMovie(movie)
         })
+        
+        
     }
 
     useEffect(()=>{
@@ -27,7 +27,7 @@ export const Details = ()=>{
             <div className="card">
   <div className="card-image">
     <figure className="image is-4by3">
-      <img src={movie.Poster} alt="Placeholder image"/>
+      <img src={movie.Poster} alt={movie.Title}/>
     </figure>
   </div>
   <div className="card-content">
