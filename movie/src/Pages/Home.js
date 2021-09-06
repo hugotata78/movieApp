@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { MoviesList } from '../components/MoviesList'
 import Title  from '../components/Title'
 import { SearchForm } from '../components/SearchForm'
+import NavBar from '../components/NavBar';
 
 export const Home = ()=>{
 
@@ -22,6 +23,7 @@ export const Home = ()=>{
     
     return (
       <div className="App">
+        <NavBar/>
         <Title/>
         <div className='SearchForm-wrapper'>
           <SearchForm onResults={handleResults}/>

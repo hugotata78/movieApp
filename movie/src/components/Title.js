@@ -4,7 +4,7 @@ import React from 'react'
 
 
  const Title = ()=>{
-    return <h1 className='title'>Search Movie</h1>
+    return <h1 className='title my-title'>Search Movie</h1>
 }
 
 export default Title
