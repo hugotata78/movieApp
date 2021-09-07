@@ -5,12 +5,17 @@ import './App.css';
 import 'bulma/css/bulma.css'
 import { Routes } from './Routes';
 //import { Title } from './components/Title'
+import { Provider } from 'react-redux'
+import { store } from './redux/store';
 
 function App() {
-  
-  
+
+
   return (
-    <Routes/>
+    <Provider store={store}>
+      <Routes />
+    </Provider>
+
   );
 }
 

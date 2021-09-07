@@ -1,44 +1,43 @@
 import React, { useState } from 'react'
-const apiKey = 'ee818442'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
+import { getResultsMovie } from '../redux/action/movieAction'
 
-export const SearchForm = ({onResults})=>{
 
-    const [movie,setMovie] = useState('')
+export const SearchForm = () => {
 
-    const handleInputChange = (e)=>{
-        setMovie(e.target.value)
-        console.log(movie)
-    }
+  const [movie, setMovie] = useState('')
+  const dispatch = useDispatch()
+  const history = useHistory()
 
-    const handleSubmit = (e)=>{
-        e.preventDefault()
-        fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${movie}`)
-        .then(response=>response.json())
-        .then(results =>{
-            const { Search = [], totalResults = '0' } = results
-            console.log({ Search, totalResults })
-            onResults(Search)
-        })
-        
-    }
+  const handleInputChange = (e) => {
+    setMovie(e.target.value)
+    console.log(movie)
+  }
 
-    return(
-        <form onSubmit={handleSubmit}>
-        <div className="field has-addons">
-          <div className="control">
-            <input 
-               className="input"
-               type="text"
-               placeholder="Movie to search ..."
-               onChange={handleInputChange}
-            />
-          </div>
-         <div className="control">
-           <button className="button is-info">
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(getResultsMovie(movie))
+    history.push(`/${movie}`)
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="field has-addons">
+        <div className="control">
+          <input
+            className="input"
+            type="text"
+            placeholder="Movie to search ..."
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="control">
+          <button className="button is-info">
             Search
-           </button>
-         </div>
-       </div>
-       </form>
-    )
+          </button>
+        </div>
+      </div>
+    </form>
+  )
 }
