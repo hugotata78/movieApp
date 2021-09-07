@@ -9,9 +9,9 @@ const NavBar = () => {
         history.push('/')
     }
     return (
-        <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+        <nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <button className="button is-primary" onClick={e=>handleOnClick(e)} fontSize='30px'>Home</button>
+                <button className="button is-info" onClick={e=>handleOnClick(e)} fontSize='30px'>Home</button>
 
                 {/* <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>

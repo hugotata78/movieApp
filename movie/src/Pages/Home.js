@@ -3,6 +3,7 @@ import { MoviesList } from '../components/MoviesList'
 import Title  from '../components/Title'
 import { SearchForm } from '../components/SearchForm'
 import NavBar from '../components/NavBar';
+import NotFound from './NotFound';
 
 export const Home = ()=>{
 
@@ -16,7 +17,7 @@ export const Home = ()=>{
     
     const getResults = ()=>{
       return !results.length ?
-      <small>No search results found</small>
+      <NotFound/>
       :
       <MoviesList results={results}/>
     }
@@ -30,7 +31,7 @@ export const Home = ()=>{
         </div>
         {
           !search ?
-          <small>Use the form to perform a search</small>
+          <small className='mt-2'>Use the form to perform a search</small>
           :
           <div>{getResults()}</div>
         }
