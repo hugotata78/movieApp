@@ -1,9 +1,10 @@
-import { FETCH_MOVIE_ERROR, FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS } from "../action/movieAction"
+import { FETCH_MOVIE_ERROR, FETCH_MOVIE_REQUEST, FETCH_MOVIE_SUCCESS, GET_MOVIE } from "../action/movieAction"
 
 const initialState ={
     movies:{},
     loading:false,
-    error:false
+    error:false,
+    movie:{}
 }
 
 const movieReducer = (state=initialState,action)=>{
@@ -29,7 +30,11 @@ const movieReducer = (state=initialState,action)=>{
                 loading:false,
                 error:true
             }
-
+        case GET_MOVIE:
+            return{
+                ...state,
+                movie:action.payload
+            }
         default:
             return state
     }

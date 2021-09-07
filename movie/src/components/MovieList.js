@@ -4,7 +4,7 @@ import { Movie } from './Movie'
 
 export const MoviesList = ({ results }) => {
 
-    
+
 
   const renderResults = () => {
     return (
