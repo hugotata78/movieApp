@@ -4,24 +4,23 @@ import { Movie } from './Movie'
 
 export const MoviesList = ({ results }) => {
 
-
-
+  
   const renderResults = () => {
     return (
-      results.map(res => {
+      results && results.map(r => {
         return (
 
           <div
             className='MoviesListItem'
-            key={res.imdbID}
+            key={r.imdbID}
           >
 
             <Movie
-              id={res.imdbID}
-              title={res.Title}
-              poster={res.Poster}
-              type={res.Type}
-              year={res.Year}
+              id={r.imdbID}
+              title={r.Title}
+              poster={r.Poster}
+              type={r.Type}
+              year={r.Year}
             />
 
           </div>

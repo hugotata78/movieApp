@@ -6,13 +6,12 @@ import { getResultsMovie } from '../redux/action/movieAction'
 
 export const SearchForm = () => {
 
-  const [movie, setMovie] = useState('')
   const dispatch = useDispatch()
+  const [movie, setMovie] = useState('')
   const history = useHistory()
 
   const handleInputChange = (e) => {
     setMovie(e.target.value)
-    console.log(movie)
   }
 
   const handleSubmit = (e) => {

@@ -47,7 +47,7 @@ const getMovie = (id) => {
             })
 
         } catch (error) {
-
+            
         }
     }
 }
