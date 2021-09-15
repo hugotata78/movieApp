@@ -5,6 +5,7 @@ export const FETCH_MOVIE_REQUEST = 'FETCH_MOVIE_REQUEST'
 export const FETCH_MOVIE_SUCCESS = 'FETCH_MOVIE_SUCCESS'
 export const FETCH_MOVIE_ERROR = 'FETCH_MOVIE_ERROR'
 export const GET_MOVIE = 'GET_MOVIE'
+
 const fetchMovieRequest = () => {
     return {
         type: FETCH_MOVIE_REQUEST
