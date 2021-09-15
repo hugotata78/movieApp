@@ -30,12 +30,12 @@ const MovieDetail = ({ movie }) => {
                         </div>
                     </div>
 
-                    <div class="content">
+                    <div className="content">
                         <p>{movie.Plot}</p>
                         <span>{movie.Actors}</span>
                         <br />
-                        <button class="button is-link m-4" onClick={e => handleOnClick(e)}>Home</button>
-                        <button class="button is-link m-4" onClick={e => prevPage(e)}>Go Back</button>
+                        <button className="button is-link m-4" onClick={e => handleOnClick(e)}>Home</button>
+                        <button className="button is-link m-4" onClick={e => prevPage(e)}>Go Back</button>
                     </div>
                 </div>
             </div>

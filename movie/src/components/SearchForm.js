@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router'
-import { getResultsMovie } from '../redux/action/movieAction'
 
 
 export const SearchForm = () => {
 
-  const dispatch = useDispatch()
+  
   const [movie, setMovie] = useState('')
   const history = useHistory()
 
@@ -16,7 +14,6 @@ export const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(getResultsMovie(movie))
     history.push(`/${movie}`)
   }
 

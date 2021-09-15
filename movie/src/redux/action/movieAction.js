@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiKey = 'ee818442'
+const url = 'http://localhost:3001/'
 export const FETCH_MOVIE_REQUEST = 'FETCH_MOVIE_REQUEST'
 export const FETCH_MOVIE_SUCCESS = 'FETCH_MOVIE_SUCCESS'
 export const FETCH_MOVIE_ERROR = 'FETCH_MOVIE_ERROR'
@@ -29,7 +29,7 @@ const getResultsMovie = (movie) => {
     return async (dispatch) => {
         try {
             dispatch(fetchMovieRequest())
-            const response = await axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&s=${movie}`)
+            const response = await axios.get(`${url}${movie}`)
             response.data.Response === 'True' ? dispatch(fetchMovieSuccess(response.data)) : dispatch(fetchMovieError())
 
         } catch (error) {
@@ -41,7 +41,7 @@ const getResultsMovie = (movie) => {
 const getMovie = (id) => {
     return async (dispatch) => {
         try {
-            const response = await axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&i=${id}`)
+            const response = await axios.get(`${url}movie/${id}`)
             dispatch({
                 type: GET_MOVIE,
                 payload: response.data
