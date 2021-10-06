@@ -1,6 +1,7 @@
 # movieApp
 
 #1 git clone https://github.com/hugotata78/movieApp.git
+
 #2 cd movieApp
 #3 cd movie
 #4 ejecutar comando 'npm install' al instalar todas las dependencias del lado del cliente, ejecutar comando 'npm start' para iniciar la aplicación

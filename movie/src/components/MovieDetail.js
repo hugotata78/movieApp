@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
+import img from '../img/img.jpg'
 
 const MovieDetail = ({ movie }) => {
 
@@ -13,12 +14,14 @@ const MovieDetail = ({ movie }) => {
         e.preventDefault()
         history.goBack()
     }
+
+    const poster = movie.Poster==='N/A' ? img: movie.Poster
     return (
         <div className='Details'>
             <div className="card">
                 <div className="card-image">
                     <figure className="image is-4by3">
-                        <img src={movie.Poster} alt={movie.Title} />
+                        <img src={ poster } alt={movie.Title} />
                     </figure>
                 </div>
                 <div className="card-content">
@@ -35,7 +38,7 @@ const MovieDetail = ({ movie }) => {
                         <span>{movie.Actors}</span>
                         <br />
                         <button className="button is-link m-4" onClick={e => handleOnClick(e)}>Home</button>
-                        <button className="button is-link m-4" onClick={e => prevPage(e)}>Go Back</button>
+                        <button className="button is-success m-4" onClick={e => prevPage(e)}>Go Back</button>
                     </div>
                 </div>
             </div>

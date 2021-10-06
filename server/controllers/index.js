@@ -21,7 +21,8 @@ const getMovie = async (req,res)=>{
     }
 }
 
+
 module.exports={
     getResultsMovies,
-    getMovie
+    getMovie,
 }

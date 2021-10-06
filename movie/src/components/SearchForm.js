@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-
+import Swal from 'sweetalert2'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export const SearchForm = () => {
 
-  
+
   const [movie, setMovie] = useState('')
   const history = useHistory()
 
@@ -14,12 +16,16 @@ export const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    history.push(`/${movie}`)
+    movie === '' ?
+      Swal.fire('Enter data to make the query')
+      :
+  
+      history.push(`/${movie}`)
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="field has-addons">
+    <form onSubmit={handleSubmit} >
+      <div className="field has-addons search-form">
         <div className="control">
           <input
             className="input"
@@ -30,7 +36,7 @@ export const SearchForm = () => {
         </div>
         <div className="control">
           <button className="button is-info">
-            Search
+            <FontAwesomeIcon icon={faSearch}/>
           </button>
         </div>
       </div>

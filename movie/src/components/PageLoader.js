@@ -4,7 +4,7 @@ import React from "react";
 const PageLoader = () => {
     return (
         <div className="pageloader">
-            <span className="title">Loading</span>
+            <h1 className="title">Loading</h1>
         </div>
     )
 }

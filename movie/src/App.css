@@ -18,10 +18,17 @@
   padding:16px; 
 }
 .MoviesListItem{
-  margin-bottom: 24px;
-  width: 48%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px 5px;
 }
 
+.MoviesListItem .image{
+  width: 340px;
+  height: 100%;
+  max-height: 550px;
+}
 .Details{
   margin: 150px auto;
   display: flex;
@@ -30,6 +37,14 @@
   width: 80%;
 
 }
-img{
-  max-height: 600px;
+
+
+@media (max-width:1024){
+  .SearchForm-wrapper{
+    width: auto;
+    margin: auto;
+  }
+  .MoviesListItem{
+    width: 98%;
+  }
 }

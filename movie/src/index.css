@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
@@ -45,4 +46,12 @@ code {
 @keyframes turn {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
+}
+
+@media only screen and(max-width:300px){
+  .search-form{
+    width: 80%;
+    padding: auto;
+    margin: auto;
+  }
 }
