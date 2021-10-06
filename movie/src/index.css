@@ -48,10 +48,3 @@ code {
   to {transform: rotate(360deg);}
 }
 
-@media only screen and(max-width:300px){
-  .search-form{
-    width: 80%;
-    padding: auto;
-    margin: auto;
-  }
-}
